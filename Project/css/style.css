@@ -1,0 +1,349 @@
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav{
+    display: flex;
+    background-color: #847c96;
+    font-family: 'Libre Baskerville', serif;
+    width: 100%;
+}
+
+.navbar .navbar-nav li a{
+    color: #f3f3fb; 
+}
+
+body{ 
+    background-color: #f3f3fb;
+    font-family: 'Libre Baskerville', serif;
+}
+
+img#mainpic{
+    max-height: 200px;
+    max-width: 200px;
+}
+
+footer{
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+    padding-top: 60px;
+    color: #776d8a;
+    font-size: 0.6em;
+}
+
+.row2 {
+    margin-top: 40px;
+}
+
+header{
+    font-size: 1.5rem;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    color: #343f56;
+    padding-left: 40px;
+    padding-top: 50px;
+    padding-left: 60px;
+    padding-top: 30px;
+}
+
+
+nav .navbar-brand{
+    font-weight: 700;
+    color: #f3f3fb;
+    padding-left: 40px;
+}
+
+#music-choice{
+    margin-top: 40px;
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+}
+
+.music{
+    color: #343f56;
+    font-size: 1.2rem;
+}
+
+#to-do-list{
+    font-family: 'Libre Baskerville', serif;
+    color: #847c96;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+#to-do-input{
+    height: 2.5rem;
+}
+
+.row2 label{
+    padding-bottom: 10px;
+    font-size:20px;
+    color: #343f56;
+}
+
+.btn-group-vertical{
+    color: #e9c1d9;
+
+}
+
+.first:after {
+    content:"Start Studying";
+}
+
+.first:hover::after {
+    content: "Sign up";
+}
+
+.second:after {
+    content:"I've created my study space";
+}
+
+.second:hover::after {
+    content: "Log in";
+}
+
+main.landing-page{
+    background-color: #d6bfbc;
+    padding-left: 40px;
+}
+
+.landing-pic{
+    display: none;
+}
+
+#landing-title{
+    color: #b8644a;
+    font-size: 2.5rem;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+    padding-left: 60px;
+    padding-top: 30px;
+}
+
+#acc-button{
+    padding-left: 60px;
+}
+
+#col1-landing{
+    padding-right: 90px;
+}
+
+.sub-heading{
+    color: #b8644a;
+    font-family: 'Libre Baskerville', serif;
+    padding-left: 60px;
+    padding-top: 10px;
+    font-style: italic;
+}
+
+.landing-footer{
+    color: #b8644a;
+}
+
+#spotify{
+    display: none;
+}
+
+.dropdown{
+    padding: 10px;
+}
+
+.dropdown-list{
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.dropdown-menu label, .dropdown-menu ul li{
+    padding: 10px;
+    font-size: 0.7rem;
+}
+
+/* Stanley */
+.top-button {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1.top-text {
+    text-align: center;
+}
+
+.input-group {
+    width: 200px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #333;
+    height: 90vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    overflow-y: auto;
+  }
+
+  .app-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 80px;
+    opacity: 0.5;
+  }
+  
+  svg {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .todo-list {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  
+  .todo-item {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .todo-item span {
+    flex-grow: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 22px;
+  }
+  
+  .done span {
+    text-decoration: line-through;
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  .tick {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #333;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .tick::before {
+    content: '✓';
+    font-size: 20px;
+    display: none;
+  }
+  
+  .done .tick::before {
+    display: inline;
+  }
+  
+  .delete-todo {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .delete-todo svg {
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+  }
+  
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #333;
+  }
+
+@media (min-width: 736px){
+    header{
+        font-size: 2rem;
+    }
+
+    img#mainpic{
+        max-height: 400px;
+        max-width: 800px;
+    }
+
+    .landing-pic{
+        display: block;
+        height: 28rem;
+
+        border-radius: 20px;
+        padding-top: 30px;
+        
+    }
+
+    .timer{
+        padding-bottom: 23px;
+        padding-right: 12px;
+        opacity: 0.6;
+    }
+
+}
+
+
+@media (min-width: 1200px){
+    #spotify{
+        display: block;
+        padding-left: 60px;
+        padding-top: 30px;
+    }
+    
+    img{
+        padding-top: 30px;
+        border-radius: 20px;
+        max-height: 800px;
+        max-width: 1000px;
+    }
+
+    #music-choice{
+        text-align: center;
+        margin-top: 40px;
+        font-family: 'Libre Baskerville', serif;
+        font-size: 40px;
+    }
+
+    .music{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .timer{
+        padding-right: 12px;
+        opacity: 0.6;
+    }
+
+    .landing-pic{
+        display: block;
+        height: 30rem;
+        border-radius: 20px;
+        padding-top: 30px;
+        
+    }
+
+    header{
+        font-size: 2.5rem;
+    }
+}
+
