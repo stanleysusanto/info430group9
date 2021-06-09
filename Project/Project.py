@@ -7,32 +7,46 @@ import pandas as pd
 import pyodbc
 
 urls = []
-csv_filepath = os.path.join(os.path.dirname(__file__), 'output.csv')
+csv_filepath = os.path.join(os.path.dirname(__file__), 'output.csv')    
 
 def scrape_urls():
     books = []
-    urls = ["https://hubres.uw.edu/hubcal/MasterCalendar.aspx?data=UHcG9WyGjKoO9WuaUlDYjg%3d%3d"]
-    for url in urls:
-        print('Scraping url', url)
-        urlPage = requests.get(url)
-        soup = bs(urlPage.content, 'html.parser')
-        
-        Name = ''
-        try:
-            Name = soup.find("span", attrs={"data-bind": "text:$data.isAllDay() ? $parent.formatDateTime($data, 'DateShort', $element) + ' (All day)' : $parent.formatDateTime($data, 'DateTimeShort', $element)"}).text
-        except:
-            print('Could not scrape url: ', url)
-            continue
+    url = 'https://indyschild.com/100-things-to-do-outside-this-summer-at-home/'
+    print('Scraping url', url)
+    urlPage = requests.get(url)
+    soup = bs(urlPage.content, 'html.parser')
+    temp = soup.find_all("li", attrs={"style": "font-weight 400;"})
+    print(temp)
+    Name = ''
+    try:
+        Name = soup.find("span", attrs={"style": "font-weight: 400;"}).text.strip()
+    except:
+        print('Could not scrape url: ', url)        
 
-        books.append([Name])
-        time.sleep(1)
-    print(Name); 
+    books.append([Name])
+    time.sleep(1)
+
     columns = ['Name']
+    print(Name)
     df = pd.DataFrame(books, columns=columns)
     
     df.to_csv(csv_filepath, index = False)
 
+def insert_to_db():
+    # Read our csv we created earlier but tell Pandas to not mess with 'N/A' values
+    df = pd.read_csv(csv_filepath, keep_default_na=False)
+
+    server = 'is-info430.ischool.uw.edu'
+    database = 'HW4'
+    username = 'INFO430'
+    password = 'SuperSafePassword1234'
+    conn = pyodbc.connect('DRIVER={SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
+    cursor = conn.cursor()
+    for index, row in df.iterrows():
+        cursor.execute("INSERT INTO dbo.jj_Books (Name,Price,UPC,InStock,Type) values(?,?,?,?,?)", row.Name, row.Price, row.UPC, row.InStock, row.Type)
+    conn.commit()
+    cursor.close()
+
 if __name__ == '__main__':
-    # crawl_urls()
     scrape_urls()
-    # Comment this out until you feel your data within your csv looks good, then push to your table
+    # insert_to_db()
