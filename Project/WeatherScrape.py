@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-search = "weather in Seattle"
+search = "weather in india"
 
 URL = f"https://www.google.com/search?q={search}"
 
@@ -11,3 +11,14 @@ sav = BeautifulSoup(req.text, "html.parser")
 
 update = sav.find("div", class_= "BNeawe").text
 print(update)
+
+newString = update.split("°", 1)
+
+finString = newString[0]
+
+print(finString)
+
+if (int(finString) > 70):
+    print("youre in hell")
+else:
+    print("stay inside and cry")
