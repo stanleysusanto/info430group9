@@ -57,7 +57,14 @@
                 Hey, What reward do you want to get today?
             </h1>
             <div class="input-group" style="width:50rem; margin-left: auto; margin-right: auto;">
-                <input type="text" class="form-control" placeholder="Eat 10 bars of chocolate" aria-label="Eat 10 bars of chocolate" aria-describedby="basic-addon2">
+                <input list="activities" class="form-control" placeholder="Eat 10 bars of chocolate" aria-label="Eat 10 bars of chocolate" aria-describedby="basic-addon2">
+                <datalist id="activities">
+                    <option value="Watch 30 minutes netflix">
+                    <option value="Eats 1/2 cup of icecream ">
+                    <option value="Nap for 20 minutes">
+                    <option value="Eat Buffalo Wild Wings">
+                    <option value="Eat 3 bars of chocolate">
+                </datalist>
                 <Button class="input-group-text" id="basic-addon2" data-toggle="modal" data-target="#exampleModalCenter">Generate Challenge</Button>
             </div>
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

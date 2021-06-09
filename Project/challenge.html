@@ -57,7 +57,15 @@
                 Hey, What are you doing today?
             </h1>
             <div class="input-group" style="width:50rem; margin-left: auto; margin-right: auto;">
-                <input type="text" class="form-control" placeholder="Push up 10 reps" aria-label="Push up 10 reps" aria-describedby="basic-addon2">
+                <input list="activities" class="form-control" placeholder="Push up 10 reps" aria-label="Push up 10 reps" aria-describedby="basic-addon2">
+                <datalist id="activities">
+                    <option value="Run for 30 minutes">
+                    <option value="Push up 10 reps, 3 sets">
+                    <option value="Swim for 1 hour">
+                    <option value="Walk around housing area">
+                    <option value="Pull up 5 reps, 2 sets">
+                    <option value="Gardening">
+                </datalist>
                 <Button class="input-group-text" id="basic-addon2" data-toggle="modal" data-target="#exampleModalCenter">Generate Reward</Button>
             </div>
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
