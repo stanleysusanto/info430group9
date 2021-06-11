@@ -9,25 +9,25 @@ import pyodbc
 csv_filepath = os.path.join(os.path.dirname(__file__), 'output.csv')    
 
 def scrape_urls():
-    activities = []
-    url = 'https://indyschild.com/100-things-to-do-outside-this-summer-at-home/'
+    ActivitiesHobby = []
+    url = 'https://simplicable.com/en/hobbies'
     print('Scraping url', url)
     urlPage = requests.get(url)
     soup = bs(urlPage.content, 'html.parser')
 
-    ActivitySummerName = []
+    ActivityHobbyName = []
     try: 
-        ActivitySummerName = soup.find_all("li", attrs={"style": "font-weight: 400;"})
+        ActivityHobbyName = soup.find_all("td", attrs={"style": "width:40vw"})
     except:
         print("cant do it")   
 
-    for i in range(len(ActivitySummerName)):
-        newString = ActivitySummerName[i].text 
-        activities.append([newString])
+    for i in range(len(ActivityHobbyName)):
+        newString = ActivityHobbyName[i].text 
+        ActivitiesHobby.append([newString])
         time.sleep(1)
 
-    columns = ['ActivitySummerName']
-    df = pd.DataFrame(activities, columns=columns)
+    columns = ['ActivityHobbyName']
+    df = pd.DataFrame(ActivitiesHobby, columns=columns)
     
     df.to_csv(csv_filepath, index = False)
     
@@ -43,7 +43,7 @@ def insert_to_db():
     conn = pyodbc.connect('DRIVER={SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
     cursor = conn.cursor()
     for index, row in df.iterrows():
-        cursor.execute("INSERT INTO dbo.ACTIVITY_SUMMER (ActivitySummerName) values(?)", row.ActivitySummerName)
+        cursor.execute("INSERT INTO dbo.ACTIVITY_HOBBY (ActivityHobbyName) values(?)", row.ActivityHobbyName)
     conn.commit()
     cursor.close()
 
