@@ -19,6 +19,34 @@ body{
     font-family: 'Libre Baskerville', serif;
 }
 
+p.strikethrough { 
+    max-width: 100px;
+}
+
+input[id=cb] {
+    display: none;
+}
+
+input[id=cb]:checked~p.strikethrough {
+    text-decoration: line-through;
+    color: red;
+}
+
+label {
+    border: thin solid darkgray;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+p.listed {
+    text-align: center;
+    font-size: 30px;
+}
+
+p.listed 
+
 img#mainpic{
     max-height: 200px;
     max-width: 200px;
