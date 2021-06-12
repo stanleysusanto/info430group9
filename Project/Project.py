@@ -23,8 +23,9 @@ def scrape_urls():
 
     for i in range(len(ActivitySummerName)):
         newString = ActivitySummerName[i].text 
-        activities.append([newString])
-        time.sleep(1)
+    
+    activities.append([newString])
+    time.sleep(1)
 
     columns = ['ActivitySummerName']
     df = pd.DataFrame(activities, columns=columns)

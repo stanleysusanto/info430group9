@@ -1,6 +1,6 @@
 import os
 import requests
-import time 
+import time
 
 from bs4 import BeautifulSoup as bs 
 import pandas as pd 
