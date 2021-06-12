@@ -50,9 +50,3 @@ def insert_to_db():
 if __name__ == '__main__':
     scrape_urls()
     #insert_to_db()
-
-cnxn = pyodbc.connect("Driver={SQL Server};Server=info430group9.database.windows.net;Database=INFO430_GROUP_PROEJCT;UID = info430group9;PWD = group91234!")
-cursor = cnxn.cursor()
-cursor.execute('SELECT * FROM [dbo.ACTIVITY_OUTDOOR]')
-for row in cursor:
-    print('row = %r' % (row,))
