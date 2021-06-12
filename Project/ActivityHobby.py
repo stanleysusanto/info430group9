@@ -49,4 +49,4 @@ def insert_to_db():
 
 if __name__ == '__main__':
     scrape_urls()
-    #insert_to_db()
+    insert_to_db()
